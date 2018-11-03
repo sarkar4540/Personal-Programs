@@ -27,9 +27,9 @@ using namespace std;
 
 /**
  * Searches for a function definition in the code.
- * @param name
- * @param code
- * @return 
+ * @param name The function name
+ * @param code  The code to be parsed
+ * @return The line number where the function definition is written
  */
 int FindFunctionDefn(const char* name,const char* code){
     int line_count=0;
@@ -67,7 +67,11 @@ int FindFunctionDefn(const char* name,const char* code){
     }while(*tcode!='\0');
     return 0;
 }
+
+
 int main(int argc, char** argv) {
+    
+    //Testing using a test case.
     char strFunctionName[] = "func2"; 
     char strSourceCode[] = "int func1(){ return 0; }\n int func2(){ return 1; }\nint main(int argc, char*argv[]){ return func2(); }\n"; 
     int c=FindFunctionDefn( strFunctionName, strSourceCode );
